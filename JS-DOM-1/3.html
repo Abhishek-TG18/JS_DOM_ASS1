@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <button id="btn1">+</button>
+    <h1 style="display: inline;" id="count"><sup>0</sup></h1>
+    <button id="btn2">-</button>
+    <script>
+        let btn1=document.getElementById("btn1");
+        let btn2=document.getElementById("btn2");
+        let count=document.getElementById("count");
+        let counter=0;
+            function add() {
+               
+                let value = ++counter;
+                count.innerHTML= value ;
+
+            }
+            function sub() {
+                if(counter===0 ){
+                    counter--;
+                    count.innerHTML=counter;
+                    alert("YOU are at the lowest value ");
+                    
+                }
+                else{
+                    counter--;
+                    count.innerHTML=counter;
+
+                }
+            }
+        btn1.addEventListener("click",add);
+        btn2.addEventListener("click",sub);
+    </script>
+</body>
+</html>

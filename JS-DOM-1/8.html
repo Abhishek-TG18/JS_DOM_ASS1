@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+           justify-content: center;
+           align-items: center;
+           align-content: center;
+           align-self: center;
+           
+        }
+        div{
+            border:1px solid aliceblue;
+            border-radius: 5px;
+           height: 100px;
+            width: 200px;
+            padding-left: 50px;
+            
+            position: absolute;
+            top:50%;
+            bottom: 50%;
+            
+        }
+        h1{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1 id="time"></h1>
+    </div>
+      <script>
+               const time = new Date();
+               const hours=time.getHours().toString().padStart(2,0);
+               const min=time.getMinutes().toString().padStart(2,0);
+               const sec=time.getSeconds().toString().padStart(2,0);
+               const currentTime=`${hours}:${min}:${sec}`;
+               const clr=`#${hours}${min}${sec}`;
+
+            let h1=document.getElementById("time");
+            h1.innerText = currentTime 
+            let body=document.querySelector("body");
+            body.style.backgroundColor=clr;
+
+
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            max-width:100%;
+            justify-content: center;
+            gap:05px;
+          
+        }
+        input{
+            height: 21px;
+            border-radius: 5%;
+            padding: 2px;
+            width: 180%;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            width:100%;
+            align-items: center;
+        }
+        button{
+            margin-top: 10px;
+            padding: 8px;
+            width:120px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sign Up Form</h1>
+        <form action="#" method="get" id="form1" onsubmit="validate(event)">
+            <label for="name">Name :</label>
+            <input type="text" placeholder="( Mininmum of 3 charecters)" required id="name">
+            <label for="email">Email :</label>
+            <input type="email" name="email" required id="email" placeholder="Enter Your Email">
+            <label for="pass">Password:</label>
+            <input type="password" name="pass" required id="pass">
+            <button id="sub" type="submit">submit</button>
+        </form>
+    </div>
+    <script>
+        function validate(event){
+            event.preventDefault();
+        let name= document.getElementById("name");
+        let email=document.getElementById("email");
+        let pass=document.getElementById("pass");
+       
+        let btn=document.querySelector("button");
+        
+                if(name.value.length >3 && pass.value.length >8){
+                    alert("Form Validation Sucessfull");
+                }
+                else{
+                    alert(" Form validation Failed !!");
+                }
+        }
+
+        
+    </script>
+</body>
+</html>

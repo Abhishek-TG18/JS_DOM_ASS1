@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYLE>
+        img{
+            width:350px;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 15PX;
+        }
+        button{
+            width:200px;
+            padding: 8px;
+        }
+        .none{
+            display: none;
+        }
+    </STYLE>
+</head>
+<body>
+   <div> 
+    <h1>Your Image is Visible</h1>
+    <button>Toggle Image</button>
+    <img src="img`.png" alt="image"></div>
+  <script>
+    let h1 = document.querySelector("h1");
+    let btn = document.querySelector("button");
+    let img = document.querySelector("img");
+    let mode = "visible";
+
+    function visibility() {
+        if (mode === "visible") {
+            h1.innerText = "Your Image is Hidden";
+            img.classList.add("none");
+            mode = "hidden";
+        } else if (mode === "hidden") {
+            h1.innerText = "Your Image is Visible";
+            mode = "visible";
+            img.classList.remove("none");
+        }
+    }
+
+    btn.addEventListener("click", visibility);
+</script>
+
+</body>
+</html>

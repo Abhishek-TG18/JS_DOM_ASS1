@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width:180px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="search for items" id="input">
+    <h2>Results:</h2>
+    <ul id="list">
+        <li>javaScript</li>
+        <li>java</li>
+        <li>cpp</li>
+        <li>python</li>
+        <li>react</li>
+    </ul>
+
+    <script>
+
+        let input=document.querySelector("#input");
+        let u_list=document.querySelector("#list")
+
+        input.addEventListener('input',function (){
+            const searchTerm = input.value.toLowerCase();
+
+            Array.from(u_list.getElementsByTagName('li')).forEach(function(item){
+                const text =item.textContent.toLowerCase();
+                    if(text.includes(searchTerm)){
+                        item.style.display='block';
+                    }
+                    else{
+                        item.style.display='none';
+                    }
+            });
+        });
+    </script>
+</body>
+</html>

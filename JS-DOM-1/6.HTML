@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;"></div>
+    <script>
+    let p=document.createElement("P");
+    p.innerText="which is favorite programming language :";
+    let body=document.querySelector("div");
+    body.prepend(p);
+
+    let opt=["JS","java","c++","python","c"];
+
+    let select=document.createElement("select");
+
+    opt.map((val)=>{
+        const option=document.createElement("option");
+        option.innerText=val;
+        option.value=val;
+
+        select.appendChild(option);
+    });
+
+      p.appendChild(select);
+
+    </script>
+</body>
+</html>
